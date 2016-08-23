@@ -1,0 +1,9 @@
+<ul>
+<% @user.ships.each do |ship| %>
+  <li>
+    (<%= ship.start_coordinate_x %>, <%= ship.start_coordinate_y %>)
+    (<%= ship.end_coordinate_x %>, <%= ship.end_coordinate_y %>) 
+    <%= ship.sunk? ? "SUNK!" : "In battle" %>
+  </li>
+<% end %>
+</ul>

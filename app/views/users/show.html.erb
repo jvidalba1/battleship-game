@@ -1,0 +1,15 @@
+
+<h1>User: <%= @user.name %></h1>
+<%= form_tag game_user_attack_path(@user.game, @user), remote: true do%>
+  <p>X: <%= text_field_tag :coordinate_x %></p>
+  <p>Y: <%= text_field_tag :coordinate_y %></p>
+  
+  <p><%= submit_tag "Attack", remote: true %></p>
+<% end %>
+
+<h2>Current ships</h2>
+<div>
+  <div id="battle_grid" >
+    <%= render partial: 'battle_grid', locals: { user: @user} %>
+  </div>
+</div>

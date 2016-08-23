@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).on('ready page:load', function(){
+//   $(".attack-button").on('click', function(){
+//     coordiante_x = $("#coordinate_x").val();
+//     coordiante_y = $("#coordinate_y").val();
+
+//     $.ajax(url: "/games/"+game_id+"/users/"+user_id+"/attack").done (html) ->
+      
+//     });
+// });

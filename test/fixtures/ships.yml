@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  start_coordinate_x: 1
+  start_coordinate_y: 1
+  end_coordinate_x: 1
+  end_coordinate_y: 1
+
+two:
+  user_id: 1
+  start_coordinate_x: 1
+  start_coordinate_y: 1
+  end_coordinate_x: 1
+  end_coordinate_y: 1

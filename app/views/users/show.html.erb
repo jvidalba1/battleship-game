@@ -1,10 +1,22 @@
 
 <h1>User: <%= @user.name %></h1>
-<%= form_tag game_user_attack_path(@user.game, @user), remote: true do%>
-  <p>X: <%= text_field_tag :coordinate_x %></p>
-  <p>Y: <%= text_field_tag :coordinate_y %></p>
-  
-  <p><%= submit_tag "Attack", remote: true %></p>
+
+<% unless @user.opponent.nil? %>
+  <% if @user.is_my_turn? %>
+    <p>It's your turn, attack!</p>
+    <%= form_tag game_user_attack_path(@user.game, @user), remote: true do%>
+      <p>Coordinate in X: <%= text_field_tag :coordinate_x %></p>
+      <p>Coordinate in Y: <%= text_field_tag :coordinate_y %></p>
+      
+      <p><%= submit_tag "Attack", remote: true %></p>
+    <% end %>
+  <% else %>
+    <p>Wait, is not your turn</p>
+    <p>Refresh the page to know when is your turn</p>
+  <% end %>
+<% else %>
+  <p>Waiting for opponent</p>
+  <p>Refresh the page</p>
 <% end %>
 
 <h2>Current ships</h2>

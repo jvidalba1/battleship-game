@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @turns = @user.turns.build
+    # @turns = @user.turns.build
   end
 
   def new
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def attack
-    
     x = params[:coordinate_x]
     y = params[:coordinate_y]
     @user = User.find(params[:user_id])

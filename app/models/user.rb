@@ -5,13 +5,12 @@ class User < ActiveRecord::Base
 
   # after_commit :build_ships
 
-  # burned positions
+  # 5 ships per user
   def build_ships
-    self.ships.build(start_coordinate_x: 8,
-      start_coordinate_y: 4, 
-      end_coordinate_x: 8, 
-      end_coordinate_y: 8
-    )
+    5.times do
+      ship = self.ships.build
+      ship.populate
+    end
   end
 
   def opponent
